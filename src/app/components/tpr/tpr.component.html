@@ -1,0 +1,66 @@
+<section class=" h-fit bg-custom-gradient ">
+    <!-- Background -->
+    <div class="relative max-w-7xl h-fit bg-custom-gradient lg:py-28 md:py-14 py-8 px-8 md:px-0 mx-auto">
+
+        <div data-aos="zoom-in" data-aos-duration="1000">
+
+            <!-- Heading -->
+            <h2 class="text-center font-bold text-white text-3xl lg:text-5xl">
+                Different Types of TPRs / Initiatives
+            </h2>
+            <p class="text-center mt-4 text-white text-base md:text-lg ">
+                Our system is now capable to facilitate the following variety of trade promotions/TPRs/Initiatives.
+            </p>
+        </div>
+
+        <!-- Tabs -->
+        <div
+            class="flex justify-center flex-col md:flex-row my-8 md:my-16 bg-white rounded-2xl md:rounded-full p-4 md:px-4 md:py-2 gap-1 max-w-[720px] w-full mx-auto">
+            <button (click)="setActive('quantity')"
+                [ngClass]="activeTab === 'quantity' ? 'bg-Secondary text-white font-bold' : 'text-gray-600'"
+                class="px-4 py-3 rounded-2xl md:rounded-full font-normal text-base transition-transform  hover:scale-105 font-poppins">
+                Quantity Discounts
+            </button>
+
+            <button (click)="setActive('prompt')"
+                [ngClass]="activeTab === 'prompt' ? 'bg-Secondary text-white font-bold' : 'text-gray-600'"
+                class="px-4 py-3 rounded-2xl md:rounded-full font-normal text-base transition-transform hover:scale-105 font-poppins">
+                Prompt Payment Discount
+            </button>
+
+            <button (click)="setActive('nonreturnable')"
+                [ngClass]="activeTab === 'nonreturnable' ? 'bg-Secondary text-white font-bold' : 'text-gray-600'"
+                class="px-4 py-3 rounded-2xl md:rounded-full font-normal text-base transition-transform hover:scale-105 font-poppins">
+                Non-Returnable Allowance
+            </button>
+        </div>
+
+        <!-- Grid Items -->
+        <div data-aos="fade-up" data-aos-duration="1000"
+            class="flex justify-center gap-6 md:gap-8 w-full mt-8 md:mt-16 px-12 lg:px-32 flex-wrap">
+            <div data-aos="fade-up" data-aos-duration="1000" *ngFor="let item of currentItems"
+                class="text-center text-white relative lg:max-w-[250px] md:w-1/2 w-full flex flex-col hover:scale-105 transition-transform cursor-pointer hover:bg-white/10 px-4 py-3 rounded-2xl">
+                <div class="flex flex-col h-full">
+                    <!-- Fixed height for number -->
+                    <div
+                        class="text-5xl md:text-6xl font-semibold opacity-30 font-poppins md:h-16 flex items-center justify-center">
+                        {{ item.number }}
+                    </div>
+
+                    <!-- Fixed height for title -->
+                    <h3
+                        class="text-xl md:text-[26px] font-semibold mt-1 font-poppins md:h-14 flex items-center justify-center">
+                        {{ item.title }}
+                    </h3>
+
+                    <!-- Fixed height + clamp for description -->
+                    <p class="text-base md:text-lg mt-3 md:line-clamp-3 md:h-[84px]">
+                        {{ item.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

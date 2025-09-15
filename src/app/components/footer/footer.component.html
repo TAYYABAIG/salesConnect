@@ -1,0 +1,32 @@
+<footer class="w-full max-h-[550px] h-fit">
+    <div class="flex flex-col items-start md:items-center bg-lightBlue p-8 md:p-14 lg:p-[90px]">
+        <img src="./../../../assets/Images/logo.svg" alt="" data-aos="fade-up" data-aos-duration="1000">
+        <nav>
+            <ul class="flex flex-col md:flex-row gap-6 md:gap-12 lg:gap-24 md:mt-14 md:mb-16 my-8">
+                @for (item of navItems; track $index) {
+                <li >
+                    <a [routerLink]="item.link" routerLinkActive="active-link"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        class="text-xl nav-link font-normal font-inter text-mblack hover:font-bold cursor-pointer">
+                        {{item.label}}
+                    </a>
+                </li>
+                }
+            </ul>
+        </nav>
+        <!-- icons -->
+        <div class="flex gap-5 md:gap-9">
+            @for (item of socialIcons; track $index) {
+            <a  href="{{item.link}}" target="_blank" rel="noopener noreferrer"
+                class="w-11 h-11 rounded-full bg-primary group transition-all duration-300 cursor-pointer hover:scale-110 hover:-translate-y-1 hover:bg-headingPrimary p-3 flex items-center justify-center">
+                <i class="text-Secondary transition-all duration-300 group-hover:text-white text-xl"
+                    [ngClass]="item.icon"></i>
+            </a>
+            }
+        </div>
+    </div>
+    <p 
+        class="text-center text-white bg-primary font-inter font-normal text-base md:text-lg py-4 h-[68px] flex items-center justify-center">
+        Copyright &copy; All rights reserved by SalesConnect
+    </p>
+</footer>

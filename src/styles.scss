@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom-border {
+    border: 5px solid;
+    border-image-source: linear-gradient(90deg, #19ACE3 0%, #013151 100%);
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        height: 4px;
+        width: 0;
+        background-color: #000; // adjust color
+        transition: width 0.3s ease;
+    }
+
+    // &:hover::after {
+    //     width: 100%;
+    // }
+
+    &.active-link {
+        font-weight: 700;
+
+        &::after {
+            width: 100%; // underline always visible for active route
+        }
+    }
+}

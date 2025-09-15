@@ -1,0 +1,71 @@
+<section class="bg-gray-50">
+    <div class="p-8 md:p-14 lg:p-[90px] !pb-10 max-w-7xl mx-auto" >
+        <!-- Heading section -->
+        <div class="mb-12 md:mb-24" data-aos="zoom-in" data-aos-duration="1000">
+            <h1 class="text-3xl md:text-5xl text-mblack font-bold text-center font-poppins mb-5 lg:mb-10">What else is
+                <span class="text-headingPrimary uppercase">
+                    Included</span>
+            </h1>
+            <p class="font-normal font-poppins text-mgray text-base md:text-lg text-center">Inside the system, you will
+                find all
+                sub-modules necessary to run all your operations.</p>
+        </div>
+
+        <!-- card with action button -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up" data-aos-duration="1000">
+            <div *ngFor="let feature of features" data-aos="fade-up" data-aos-duration="1000"
+                class="overflow-hidden duration-300 hover:!scale-105 transition-transform cursor-pointer rounded-2xl shadow-2xl text-slate-500 shadow-slate-200 p-1.5">
+                <!-- Image -->
+                <figure>
+                    <img [src]="feature.image" alt="card image" class="aspect-video w-full rounded-2xl min-h-80" />
+                </figure>
+
+                <!-- Body -->
+                <div class="px-2.5 py-2.5 space-y-3 mt-8">
+                    <h3 class="text-2xl font-semibold font-poppins text-Secondary">
+                        {{ feature.title }}
+                    </h3>
+
+                    <!-- Description -->
+                    <p class="font-normal text-lg text-gray-600 font-poppins transition-all duration-300"
+                        [ngClass]="{ 'line-clamp-2': !feature.expanded }">
+                        {{ feature.expanded ? feature.fullDescription : feature.shortDescription }}
+                    </p>
+                </div>
+
+                <!-- Expand Button -->
+                <div class="flex justify-start p-2 pt-0">
+                    <button (click)="toggleExpand(feature)"
+                        class="inline-flex items-center hover:font-medium justify-center h-10 gap-2 px-5 text-lg font-normal tracking-wide transition duration-300 rounded justify-self-center whitespace-nowrap text-headingPrimary focus-visible:outline-none disabled:cursor-not-allowed">
+
+                        @if(!feature.expanded){
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
+                            color="#28d4ff" fill="none">
+                            <path d="M12 4V20M20 12H4" stroke="#28d4ff" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                        }@else {
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
+                            color="#28d4ff" fill="none">
+                            <path d="M20 12L4 12" stroke="#28d4ff" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                        }
+                        {{ feature.expanded ? 'Show less' : 'Expand more' }}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center my-8 lg:my-20" data-aos="zoom-out-down" data-aos-duration="1000">
+            <button
+                class="bg-Secondary  text-white h-14 w-full lg:w-56 hover:font-normal text-2xl py-1.5 px-9 font-poppins font-semibold rounded-full mx-auto">
+                View All
+            </button>
+        </div>
+        <!-- card with action button -->
+    </div>
+
+</section>

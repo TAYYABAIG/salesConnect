@@ -1,0 +1,53 @@
+<div class=" bg-gray-50">
+    <div class="p-8 md:p-14 lg:p-[90px] !pb-10 max-w-7xl mx-auto">
+
+        <div>
+            <div class="mb-10 md:mb-12 lg:mb-24" data-aos="zoom-in" data-aos-duration="1000">
+                <h1 class="text-3xl lg:text-5xl text-mblack font-bold text-center font-poppins mb-5 lg:mb-10">Advanced
+                    <span class="text-headingPrimary uppercase">
+                        features</span> made simple.
+                </h1>
+                <p class="font-normal font-poppins text-mgray text-base md:text-lg text-center">Use cutting-edge
+                    automation
+                    and advanced
+                    routes to manage
+                    any warehouse.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="1000"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-10">
+                @for (item of featureItems; track $index) {
+                <div ata-aos="fade-up" data-aos-duration="1000"
+                    class="flex flex-col items-center justify-center p-5 rounded-md cursor-pointer bg-white hover:shadow-xl">
+                    <img [src]="item.icon" alt="" class="mb-4">
+                    <h6 class="font-poppins font-semibold text-xl md:text-2xl text-center mb-2 text-black">
+                        {{item.title}}
+                    </h6>
+                    <span class="text-xl md:text-2xl font-poppins text-black font-light">
+                        {{item.subtitle}}
+                    </span>
+                </div>
+                }
+            </div>
+            <div class="flex justify-center items-center my-10 lg:my-20" data-aos="fade-up" data-aos-duration="1000">
+                <button
+                    class="bg-Secondary transition-all duration-300 hover:scale-105 hover:-translate-y-2 text-white h-14 w-full lg:w-56 text-2xl py-1.5 px-9 font-poppins font-semibold rounded-full mx-auto focus:scale-95 active:scale-95">
+                    Learn More
+                </button>
+            </div>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="1000"
+            class="flex rounded-2xl w-full p-1.5 h-fit bg-gradient-to-br from-primary to-Secondary items-center">
+            <div class="flex items-center flex-col xl:flex-row bg-white md:px-16 md:py-12 p-8 rounded-xl justify-between h-full">
+                <div>
+                    <h1 class="font-bold text-Secondary font-poppins text-3xl lg:text-5xl mb-5">Salesync Platform</h1>
+                    <p class="text-base md:text-lg font-poppins font-normal">Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                        since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                        specimen book.</p>
+                </div>
+                <img src="assets/Images/design.png" alt="" class="hidden lg:flex h-full w-auto max-h-48 object-cover">
+            </div>
+        </div>
+    </div>
+
+</div>

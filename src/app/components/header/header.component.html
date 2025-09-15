@@ -1,0 +1,73 @@
+<!-- Component: Basic Navbar -->
+<header class="sticky top-0 z-50 w-full border-b shadow-lg max-h-[110px] 
+         border-slate-200 bg-white/70 shadow-slate-700/5 
+         backdrop-blur-md
+         after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 
+         lg:border-slate-200 lg:after:hidden">
+    <div
+        class="relative mx-auto max-w-full px-10 lg:px-20 xl:px-40 2xl:px-60 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem] ">
+        <nav aria-label="main navigation"
+            class="flex h-[6.85rem] justify-between items-center font-medium text-slate-700" role="navigation">
+            <!-- Brand logo -->
+            <a id="WindUI" aria-label="WindUI logo" aria-current="page"
+                class="flex items-center gap-2 py-3 text-lg whitespace-nowrap focus:outline-none lg:flex-1"
+                href="javascript:void(0)">
+                <img src="assets/Images/logo.svg" alt="SalesConnect Logo" />
+            </a>
+            <!-- Mobile trigger -->
+            <!-- Mobile trigger (Hamburger / Close button) -->
+            <button class="relative self-center order-10 visible block w-10 h-10 opacity-100 lg:hidden"
+                aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+                <!-- Hamburger -->
+                <div class="absolute w-6 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                    *ngIf="!isMenuOpen()">
+                    <span
+                        class="absolute block h-0.5 w-9/12 -translate-y-2 transform rounded-full bg-slate-900 transition-all duration-300"></span>
+                    <span
+                        class="absolute block h-0.5 w-6 transform rounded-full bg-slate-900 transition duration-300"></span>
+                    <span
+                        class="absolute block h-0.5 w-1/2 origin-top-left translate-y-2 transform rounded-full bg-slate-900 transition-all duration-300"></span>
+                </div>
+
+                <!-- ❌ Close -->
+                <div class="absolute w-6 h-6 flex items-center justify-center top-1/2 z-50 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    *ngIf="isMenuOpen()">
+                    <i class="fa-solid fa-xmark text-3xl text-red-600 hover:text-red-500"></i>
+                </div>
+            </button>
+
+            <!-- Navigation links -->
+            <ul role="menubar" aria-label="Select page" [class.visible]="isMenuOpen()"
+                [class.opacity-100]="isMenuOpen()" [class.z-50]="isMenuOpen()" [class.invisible]="!isMenuOpen()"
+                [class.opacity-0]="!isMenuOpen()" [class.z-[-1]]="!isMenuOpen()" class="absolute top-0 left-0 h-screen w-full 
+         flex flex-col items-center justify-center gap-8
+         bg-white/95 font-medium transition-[opacity,visibility] duration-300 
+         lg:visible lg:relative lg:top-0 lg:z-0 lg:flex lg:flex-row lg:justify-end 
+         lg:h-[30px] lg:w-auto lg:items-stretch lg:bg-white/0 lg:gap-10 lg:px-0 
+         lg:py-0 lg:pt-0 lg:opacity-100">
+                <!-- ✅ Logo inside mobile nav -->
+                <li class=" lg:hidden">
+                    <img src="assets/Images/logo.svg" alt="SalesConnect Logo" class="h-auto w-full" />
+                </li>
+
+                @for (nav of navLinks; track $index) {
+                <li role="none" class="flex items-stretch">
+                    <a role="menuitem" aria-haspopup="false" (click)="closeMenu()" [ngClass]="{
+          'font-bold border-b-2 border-mblack': nav.current,
+          'font-normal hover:font-bold': !nav.current
+        }" class="transition-colors cursor-pointer duration-300 
+               text-mblack font-poppins 
+               text-3xl lg:text-xl">
+                        <span>{{ nav.name }}</span>
+                    </a>
+                </li>
+                }
+            </ul>
+
+
+
+
+        </nav>
+    </div>
+</header>
+<!-- End Basic Navbar-->
